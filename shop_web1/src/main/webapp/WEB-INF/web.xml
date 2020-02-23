@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         id="WebApp_ID" version="3.0">
+    <display-name>shop_web1</display-name>
+
+    <!-- 编码过滤器 -->
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>com.sn.filter.EncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- 登录过滤器 -->
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>com.sn.filter.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/l/*</url-pattern>
+    </filter-mapping>
+
+    <!-- 登录 -->
+    <servlet>
+        <servlet-name>LoginAction</servlet-name>
+        <servlet-class>com.sn.action.LoginAction</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginAction</servlet-name>
+        <url-pattern>/LoginAction</url-pattern>
+    </servlet-mapping>
+
+    <!-- 退出 -->
+    <servlet>
+        <servlet-name>ExitAction</servlet-name>
+        <servlet-class>com.sn.action.ExitAction</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExitAction</servlet-name>
+        <url-pattern>/ExitAction</url-pattern>
+    </servlet-mapping>
+
+    <!-- 注册用户 -->
+    <servlet>
+        <servlet-name>CreateUser</servlet-name>
+        <servlet-class>com.sn.action.CreateUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateUser</servlet-name>
+        <url-pattern>/CreateUser</url-pattern>
+    </servlet-mapping>
+
+    <!-- 修改密码 -->
+    <servlet>
+        <servlet-name>ChangePasswordAction</servlet-name>
+        <servlet-class>com.sn.action.ChangePasswordAction</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChangePasswordAction</servlet-name>
+        <url-pattern>/l/ChangePasswordAction</url-pattern>
+    </servlet-mapping>
+
+    <!-- 修改个人信息 -->
+    <servlet>
+        <servlet-name>ChangeUserMessageAction</servlet-name>
+        <servlet-class>com.sn.action.ChangeUserMessageAction</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChangeUserMessageAction</servlet-name>
+        <url-pattern>/l/ChangeUserMessageAction</url-pattern>
+    </servlet-mapping>
+
+    <!-- 分页查询 -->
+    <servlet>
+        <servlet-name>QueryProductAction</servlet-name>
+        <servlet-class>com.sn.action.QueryProductAction</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QueryProductAction</servlet-name>
+        <url-pattern>/QueryProductAction</url-pattern>
+    </servlet-mapping>
+
+    <!-- 添加购物车 -->
+    <servlet>
+        <servlet-name>AddCarAction</servlet-name>
+        <servlet-class>com.sn.action.AddCarAction</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddCarAction</servlet-name>
+        <url-pattern>/l/AddCarAction</url-pattern>
+    </servlet-mapping>
+
+    <!-- 删除一个购物车内的商品 -->
+    <servlet>
+        <servlet-name>DeleteOneAction</servlet-name>
+        <servlet-class>com.sn.action.DeleteOneAction</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteOneAction</servlet-name>
+        <url-pattern>/l/DeleteOneAction</url-pattern>
+    </servlet-mapping>
+
+    <!-- 更新购物车内的商品的数量和删除物品，并将删除物品放入回收站 -->
+    <servlet>
+        <servlet-name>UpdateNumAction</servlet-name>
+        <servlet-class>com.sn.action.UpdateNumAction</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateNumAction</servlet-name>
+        <url-pattern>/l/UpdateNumAction</url-pattern>
+    </servlet-mapping>
+
+    <!-- 根据名字和价格分页查询商品 -->
+    <servlet>
+        <servlet-name>SelectProductAction</servlet-name>
+        <servlet-class>com.sn.action.SelectProductAction</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SelectProductAction</servlet-name>
+        <url-pattern>/SelectProductAction</url-pattern>
+    </servlet-mapping>
+
+    <!-- 恢复回收站内的商品 -->
+    <servlet>
+        <servlet-name>RecoverProduct</servlet-name>
+        <servlet-class>com.sn.action.RecoverProduct</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RecoverProduct</servlet-name>
+        <url-pattern>/l/RecoverProduct</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
